@@ -1,0 +1,550 @@
+﻿WEBVTT
+
+1
+00:00:00.709 --> 00:00:03.292
+(upbeat music)
+
+2
+00:00:05.820 --> 00:00:07.220
+<v Instructor>All right, let's talk about something</v>
+
+3
+00:00:07.220 --> 00:00:08.380
+that's called hoisting.
+
+4
+00:00:08.380 --> 00:00:10.120
+We talked a little bit about it before,
+
+5
+00:00:10.120 --> 00:00:12.380
+but let's get into the nitty gritty of what it is,
+
+6
+00:00:12.380 --> 00:00:16.210
+when can you use it, and why might you wanna ever use it.
+
+7
+00:00:16.210 --> 00:00:18.470
+So, hoisting in JavaScript allows you
+
+8
+00:00:18.470 --> 00:00:20.630
+to access functions and variables
+
+9
+00:00:20.630 --> 00:00:22.860
+before they have been created.
+
+10
+00:00:22.860 --> 00:00:25.680
+There's two things in JavaScript that are hoisted,
+
+11
+00:00:25.680 --> 00:00:29.540
+function declarations and variable declarations.
+
+12
+00:00:29.540 --> 00:00:32.870
+So, let's go into function declarations first.
+
+13
+00:00:32.870 --> 00:00:35.380
+So go ahead and make a hoisting.js
+
+14
+00:00:35.380 --> 00:00:36.800
+in your playground folder.
+
+15
+00:00:36.800 --> 00:00:38.460
+Give it your base HTML,
+
+16
+00:00:38.460 --> 00:00:41.400
+and then link up a script to hoisting.js,
+
+17
+00:00:41.400 --> 00:00:44.000
+and then in hoisting.js we have nothing.
+
+18
+00:00:44.000 --> 00:00:45.800
+It's gonna console.log('it works!').
+
+19
+00:00:46.840 --> 00:00:47.913
+Make sure it works.
+
+20
+00:00:49.330 --> 00:00:50.740
+Good, good, good!
+
+21
+00:00:50.740 --> 00:00:53.520
+Okay, so let's talk about a function.
+
+22
+00:00:53.520 --> 00:00:55.770
+Let's make a function called sayHi.
+
+23
+00:00:55.770 --> 00:00:57.820
+Inside of that we'll console.log('hey!').
+
+24
+00:00:59.050 --> 00:01:02.600
+Now if I were to try to run that before it exists,
+
+25
+00:01:02.600 --> 00:01:04.090
+is that going to work?
+
+26
+00:01:04.090 --> 00:01:06.670
+You see my editor is already getting mad at me.
+
+27
+00:01:06.670 --> 00:01:09.149
+If I hover over it, sayHi
+
+28
+00:01:09.149 --> 00:01:11.050
+it was used before it was defined.
+
+29
+00:01:11.050 --> 00:01:13.060
+I have a rule that says you can't do this.
+
+30
+00:01:13.060 --> 00:01:14.240
+I'll explain that in just a second.
+
+31
+00:01:14.240 --> 00:01:16.030
+So is it gonna to work?
+
+32
+00:01:16.030 --> 00:01:17.280
+It works just fine.
+
+33
+00:01:17.280 --> 00:01:18.113
+Why?
+
+34
+00:01:18.113 --> 00:01:19.680
+Because hoisting is,
+
+35
+00:01:19.680 --> 00:01:22.170
+is that when you run your JavaScript file,
+
+36
+00:01:22.170 --> 00:01:23.520
+JavaScript the compiler
+
+37
+00:01:23.520 --> 00:01:26.830
+will take all of your function declarations
+
+38
+00:01:26.830 --> 00:01:28.130
+and doot, doot, doot, doot,
+
+39
+00:01:28.130 --> 00:01:30.930
+move them to the top of the file,
+
+40
+00:01:30.930 --> 00:01:33.290
+so that they're all available for you actually use them.
+
+41
+00:01:33.290 --> 00:01:34.720
+So, because of hoisting,
+
+42
+00:01:34.720 --> 00:01:38.390
+you can technically run a function before it exists.
+
+43
+00:01:38.390 --> 00:01:40.490
+Let's make another one. function add(a,b),
+
+44
+00:01:41.470 --> 00:01:44.310
+and then we will return A plus B
+
+45
+00:01:44.310 --> 00:01:46.180
+and if I were to use that in here.
+
+46
+00:01:46.180 --> 00:01:50.080
+Add 10 and two.
+
+47
+00:01:50.080 --> 00:01:51.633
+Let's console log the output.
+
+48
+00:01:54.400 --> 00:01:55.890
+Is that gonna work?
+
+49
+00:01:55.890 --> 00:01:56.930
+Yeah, 12.
+
+50
+00:01:56.930 --> 00:01:59.860
+And I've used the function here before it's defined.
+
+51
+00:01:59.860 --> 00:02:02.950
+That's because hoisting will move them to the top
+
+52
+00:02:02.950 --> 00:02:05.027
+before it will actually run anything.
+
+53
+00:02:05.027 --> 00:02:07.670
+So, JavaScript rearranges and puts the functions
+
+54
+00:02:07.670 --> 00:02:08.970
+at the top of your file.
+
+55
+00:02:08.970 --> 00:02:10.200
+Why does that exist?
+
+56
+00:02:10.200 --> 00:02:11.710
+Why might that be there?
+
+57
+00:02:11.710 --> 00:02:12.990
+I personally don't use it at all.
+
+58
+00:02:12.990 --> 00:02:15.120
+You can see that my eslint is yelling at me.
+
+59
+00:02:15.120 --> 00:02:17.990
+I much refer to first, define my functions,
+
+60
+00:02:17.990 --> 00:02:19.500
+and then go ahead and use them.
+
+61
+00:02:19.500 --> 00:02:21.420
+Or as we get into modules, I much prefer
+
+62
+00:02:21.420 --> 00:02:23.710
+to just put my functions in a separate module
+
+63
+00:02:23.710 --> 00:02:27.960
+called, like, util functions or math functions
+
+64
+00:02:27.960 --> 00:02:30.330
+and then import them as I need them into the file
+
+65
+00:02:30.330 --> 00:02:31.640
+where they actually run.
+
+66
+00:02:31.640 --> 00:02:35.240
+The one argument I have heard where hoisting is useful
+
+67
+00:02:35.240 --> 00:02:38.840
+is people much prefer to have at the, they open up,
+
+68
+00:02:38.840 --> 00:02:40.520
+let's say you open up this hoisting.js.
+
+69
+00:02:40.520 --> 00:02:41.837
+They much prefer to have like,
+
+70
+00:02:41.837 --> 00:02:44.310
+"What does this file do?"
+
+71
+00:02:44.310 --> 00:02:46.827
+First, and then the next one is,
+
+72
+00:02:46.827 --> 00:02:50.070
+"How does this file do it?".
+
+73
+00:02:50.070 --> 00:02:53.560
+So if you are quickly jumping into a file,
+
+74
+00:02:53.560 --> 00:02:55.417
+you can just see the first couple lines is,
+
+75
+00:02:55.417 --> 00:02:56.740
+"What does tis file so?"
+
+76
+00:02:56.740 --> 00:02:59.200
+I don't necessarily care how sayHi works.
+
+77
+00:02:59.200 --> 00:03:00.670
+I just wanna know what it does.
+
+78
+00:03:00.670 --> 00:03:02.660
+But, if you do care what sayHi does,
+
+79
+00:03:02.660 --> 00:03:05.170
+you can of course go a little bit lower in the file
+
+80
+00:03:05.170 --> 00:03:08.000
+and look at how that sausage is made.
+
+81
+00:03:08.000 --> 00:03:12.020
+So, personally, my only, this is just an opinion,
+
+82
+00:03:12.020 --> 00:03:13.230
+I don't agree with it
+
+83
+00:03:13.230 --> 00:03:16.470
+and I don't use hoisting all that often.
+
+84
+00:03:16.470 --> 00:03:19.610
+The other type of hoisting is called variable hoisting.
+
+85
+00:03:19.610 --> 00:03:23.380
+So, if I were to go, let me just go to the top here.
+
+86
+00:03:23.380 --> 00:03:26.830
+if I were to console.log an age variable,
+
+87
+00:03:26.830 --> 00:03:29.403
+and then say var age is equal to 10,
+
+88
+00:03:30.290 --> 00:03:31.300
+what are we gonna get there?
+
+89
+00:03:31.300 --> 00:03:32.520
+Is it gonna log?
+
+90
+00:03:32.520 --> 00:03:34.040
+Is it gonna be an error?
+
+91
+00:03:34.040 --> 00:03:37.103
+Is it going to be undefined or is it gonna be 10?
+
+92
+00:03:38.190 --> 00:03:39.650
+It's undefined.
+
+93
+00:03:39.650 --> 00:03:41.720
+So if I were to try log, like, another variable
+
+94
+00:03:41.720 --> 00:03:43.603
+that doesn't exist like cool,
+
+95
+00:03:45.890 --> 00:03:47.200
+cool is not defined.
+
+96
+00:03:47.200 --> 00:03:50.680
+So, what happens is that JavaScript
+
+97
+00:03:50.680 --> 00:03:53.900
+will hoist the variable declarations,
+
+98
+00:03:53.900 --> 00:03:56.580
+but it will not hoist the actual setting of the value.
+
+99
+00:03:56.580 --> 00:03:58.997
+So if I check it now, age is,
+
+100
+00:03:58.997 --> 00:04:00.740
+that's not gonna work 'cause it's not there,
+
+101
+00:04:00.740 --> 00:04:03.570
+but, if I check it there, age is set to 10.
+
+102
+00:04:03.570 --> 00:04:05.500
+So what JavaScript essentially does is,
+
+103
+00:04:05.500 --> 00:04:07.710
+it says before everything runs
+
+104
+00:04:07.710 --> 00:04:10.350
+I'm going to make my variables.
+
+105
+00:04:10.350 --> 00:04:13.983
+Then I'm just gonna go ahead and update them.
+
+106
+00:04:13.983 --> 00:04:14.816
+(laughs)
+
+107
+00:04:14.816 --> 00:04:15.930
+Look, he can't even see far.
+
+108
+00:04:15.930 --> 00:04:18.750
+I gotta turn off my eslint to do these terrible things.
+
+109
+00:04:18.750 --> 00:04:19.883
+Disable.
+
+110
+00:04:21.160 --> 00:04:22.663
+Eslint disable.
+
+111
+00:04:24.260 --> 00:04:26.330
+And that's essentially what JavaScript is doing is
+
+112
+00:04:26.330 --> 00:04:28.380
+it's taking the var, putting it above it.
+
+113
+00:04:29.270 --> 00:04:32.730
+So, I guess you could use hoisting to figure out
+
+114
+00:04:32.730 --> 00:04:34.870
+if variables are later created
+
+115
+00:04:34.870 --> 00:04:37.420
+but not what their values are later in the file.
+
+116
+00:04:37.420 --> 00:04:39.530
+Again, I just think that adds to the confusion.
+
+117
+00:04:39.530 --> 00:04:42.500
+So, just stick that in your back pocket.
+
+118
+00:04:42.500 --> 00:04:47.500
+Hoisting is variable declarations and function declarations
+
+119
+00:04:48.010 --> 00:04:49.990
+that are hoisted to the top of the file.
+
+120
+00:04:49.990 --> 00:04:51.280
+Only these type of functions.
+
+121
+00:04:51.280 --> 00:04:53.720
+Not if I were to put these in a variable.
+
+122
+00:04:53.720 --> 00:04:55.930
+Const add is equal to a function.
+
+123
+00:04:55.930 --> 00:04:58.740
+That's not a function declaration,
+
+124
+00:04:58.740 --> 00:05:00.630
+that's a function stuck in a variable.
+
+125
+00:05:00.630 --> 00:05:02.290
+And then we get an error.
+
+126
+00:05:02.290 --> 00:05:04.450
+Cannot access add before initialize.
+
+127
+00:05:04.450 --> 00:05:06.900
+Same with an arrow function or any of the other types
+
+128
+00:05:06.900 --> 00:05:08.210
+of functions we talked about.
+
+129
+00:05:08.210 --> 00:05:10.710
+It only works with regular functions.
+
+130
+00:05:10.710 --> 00:05:13.670
+So if I bring that back to a proper function
+
+131
+00:05:13.670 --> 00:05:15.270
+then it will hoist itself.
+
+132
+00:05:15.270 --> 00:05:16.500
+So, that's hoisting.
+
+133
+00:05:16.500 --> 00:05:17.690
+Stick it in your back pocket.
+
+134
+00:05:17.690 --> 00:05:19.130
+Know about it.
+
+135
+00:05:19.130 --> 00:05:21.980
+But we aren't going to be using that in this course
+
+136
+00:05:21.980 --> 00:05:24.050
+just 'cause I don't find much use for it.
+
+137
+00:05:24.050 --> 00:05:25.550
+I'll catch ya in the next one.
+

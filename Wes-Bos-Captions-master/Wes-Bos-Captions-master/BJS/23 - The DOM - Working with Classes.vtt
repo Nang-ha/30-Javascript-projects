@@ -1,0 +1,674 @@
+﻿WEBVTT
+
+1
+00:00:00.620 --> 00:00:03.203
+(upbeat music)
+
+2
+00:00:05.100 --> 00:00:06.830
+<v Instructor>Another common thing that we do in JavaScript</v>
+
+3
+00:00:06.830 --> 00:00:08.680
+is adding and removing of classes
+
+4
+00:00:08.680 --> 00:00:11.140
+and it's a little bit different than just using properties
+
+5
+00:00:11.140 --> 00:00:12.200
+like we've used so far
+
+6
+00:00:12.200 --> 00:00:15.950
+so let's dive into how this all works.
+
+7
+00:00:15.950 --> 00:00:19.450
+So I'm actually just gonna comment out,
+
+8
+00:00:19.450 --> 00:00:20.283
+(mouse clicking)
+
+9
+00:00:20.283 --> 00:00:22.130
+let's comment out everything.
+
+10
+00:00:22.130 --> 00:00:23.070
+Let's start fresh.
+
+11
+00:00:23.070 --> 00:00:25.530
+So we'll go down and we'll say classes.
+
+12
+00:00:25.530 --> 00:00:28.740
+So when you select an element, there is a classList
+
+13
+00:00:28.740 --> 00:00:31.680
+attribute on that and on that, there are some methods
+
+14
+00:00:31.680 --> 00:00:33.500
+for getting all of the classes
+
+15
+00:00:33.500 --> 00:00:35.710
+as well as removing and adding and removing
+
+16
+00:00:35.710 --> 00:00:36.590
+multiple classes.
+
+17
+00:00:36.590 --> 00:00:40.510
+So let's go and find, let's do something fun.
+
+18
+00:00:40.510 --> 00:00:41.880
+Maybe we'll do some animation.
+
+19
+00:00:41.880 --> 00:00:44.650
+So let's grab this image here and...
+
+20
+00:00:47.250 --> 00:00:48.870
+Let's create just like a brand new image
+
+21
+00:00:48.870 --> 00:00:51.160
+so copy one of these images, go up here
+
+22
+00:00:51.160 --> 00:00:53.140
+if it's not already there and give yourself
+
+23
+00:00:53.140 --> 00:00:56.660
+a nice big 600 pixel image.
+
+24
+00:00:56.660 --> 00:00:57.920
+(whistles)
+
+25
+00:00:57.920 --> 00:00:59.290
+Nice rocks.
+
+26
+00:00:59.290 --> 00:01:04.290
+Let's go ahead and give that a class of nice.
+
+27
+00:01:06.370 --> 00:01:07.300
+And we'll go ahead and select it
+
+28
+00:01:07.300 --> 00:01:11.380
+so const pic is equal to document.querySelector,
+
+29
+00:01:11.380 --> 00:01:13.840
+we'll grab the image with a class of nice
+
+30
+00:01:13.840 --> 00:01:16.237
+and we'll console.log the pic.classList.
+
+31
+00:01:17.560 --> 00:01:20.120
+Now, if we open up our dev tools here,
+
+32
+00:01:20.120 --> 00:01:24.410
+you'll see that we get this thing which is a DOMTokenList
+
+33
+00:01:24.410 --> 00:01:28.120
+and it will give, it's kind of like an array of all
+
+34
+00:01:28.120 --> 00:01:30.920
+of the classes that are on that image.
+
+35
+00:01:30.920 --> 00:01:34.793
+Now, if we go ahead and add another nice and cool,
+
+36
+00:01:36.400 --> 00:01:38.600
+you'll see that we get both of them.
+
+37
+00:01:38.600 --> 00:01:40.240
+And it will also give us a value
+
+38
+00:01:40.240 --> 00:01:42.990
+of all of the classes on there.
+
+39
+00:01:42.990 --> 00:01:47.700
+So that's pretty cool because we can be able to add them.
+
+40
+00:01:47.700 --> 00:01:50.860
+However, if you look in the prototype, we're gonna,
+
+41
+00:01:50.860 --> 00:01:53.230
+we haven't learned what the prototype is just yet
+
+42
+00:01:53.230 --> 00:01:55.520
+but if you sneak into the prototype,
+
+43
+00:01:55.520 --> 00:01:58.570
+you're often able to see what are the methods
+
+44
+00:01:58.570 --> 00:02:02.750
+that you're able to call against the thing that we have.
+
+45
+00:02:02.750 --> 00:02:06.030
+So classList has a prototype
+
+46
+00:02:06.030 --> 00:02:09.070
+and in that there's all kinds of adds, contains,
+
+47
+00:02:09.070 --> 00:02:11.983
+entries, forEach, items, keys.
+
+48
+00:02:11.983 --> 00:02:15.140
+A lot of these are methods for working with the classes
+
+49
+00:02:15.140 --> 00:02:16.960
+so that's exactly what we're gonna do here.
+
+50
+00:02:16.960 --> 00:02:21.523
+So what we can do is take that pic.classList
+
+51
+00:02:23.260 --> 00:02:26.820
+and we can run .add, you see actually even my VS Code
+
+52
+00:02:26.820 --> 00:02:29.610
+is giving me like commonly used ones,
+
+53
+00:02:29.610 --> 00:02:30.540
+like these little stars.
+
+54
+00:02:30.540 --> 00:02:33.010
+These are ones that I use a lot in my own coding.
+
+55
+00:02:33.010 --> 00:02:34.920
+Add, remove, contains, and toggle
+
+56
+00:02:34.920 --> 00:02:38.350
+so add if I wanna add a class of dog.
+
+57
+00:02:38.350 --> 00:02:40.290
+Or maybe we'll say open
+
+58
+00:02:42.230 --> 00:02:44.387
+and then when I run the code and inspect that
+
+59
+00:02:44.387 --> 00:02:48.700
+and see that it's there, maybe you can also remove
+
+60
+00:02:49.900 --> 00:02:52.340
+a class of cool.
+
+61
+00:02:52.340 --> 00:02:54.463
+And now when we run it, you see it's gone.
+
+62
+00:02:55.340 --> 00:02:57.410
+There is toggle, which is pretty cool.
+
+63
+00:02:57.410 --> 00:03:00.210
+So let's actually write a little bit of CSS
+
+64
+00:03:00.210 --> 00:03:03.140
+so we can visually see what's going on here.
+
+65
+00:03:03.140 --> 00:03:06.030
+So let's go just to here
+
+66
+00:03:06.030 --> 00:03:07.190
+and we've got style tag.
+
+67
+00:03:07.190 --> 00:03:09.470
+If not, just give yourself a style tag somewhere on the page
+
+68
+00:03:09.470 --> 00:03:12.070
+and let's just give ourselves the class of round
+
+69
+00:03:12.070 --> 00:03:16.613
+and we'll say border-radius: 50%.
+
+70
+00:03:17.900 --> 00:03:22.900
+Then what we'll do is we will add a class of round.
+
+71
+00:03:24.250 --> 00:03:27.807
+So pic.classList.add('round')
+
+72
+00:03:31.000 --> 00:03:33.890
+Now, when we refresh, it's obviously got a class of round.
+
+73
+00:03:33.890 --> 00:03:36.710
+The kinda cool thing about that is that we can add
+
+74
+00:03:36.710 --> 00:03:41.710
+and remove that class either by placing it into the console
+
+75
+00:03:41.960 --> 00:03:42.940
+or we can do it on click.
+
+76
+00:03:42.940 --> 00:03:43.780
+Let's show you both.
+
+77
+00:03:43.780 --> 00:03:46.800
+So let's say classList.toggle,
+
+78
+00:03:46.800 --> 00:03:48.320
+that will add it if it's not there
+
+79
+00:03:48.320 --> 00:03:50.090
+and remove it if it is there.
+
+80
+00:03:50.090 --> 00:03:51.210
+So look at that.
+
+81
+00:03:51.210 --> 00:03:52.419
+Beautiful.
+
+82
+00:03:52.419 --> 00:03:55.650
+And we can just copy that and paste it into our console
+
+83
+00:03:55.650 --> 00:03:59.100
+to just see that it adds and removes it.
+
+84
+00:03:59.100 --> 00:04:04.100
+If we go into our CSS and we add a transition: all 0.2s.
+
+85
+00:04:04.380 --> 00:04:07.740
+What that will do is every time we run it, it should
+
+86
+00:04:11.330 --> 00:04:12.330
+woo!
+
+87
+00:04:12.330 --> 00:04:15.260
+Oh, you know what, it's only animating itself
+
+88
+00:04:15.260 --> 00:04:16.620
+when it has the class.
+
+89
+00:04:16.620 --> 00:04:20.210
+So maybe we will grab our image
+
+90
+00:04:21.310 --> 00:04:24.720
+and add the transition on the image, not the class of round.
+
+91
+00:04:24.720 --> 00:04:26.820
+Now when you sort of toggle that,
+
+92
+00:04:26.820 --> 00:04:29.820
+you'll see that it's pretty cool where it like
+
+93
+00:04:29.820 --> 00:04:31.170
+adds and removes it.
+
+94
+00:04:31.170 --> 00:04:33.293
+The kinda cool thing about that is we're gonna learn about
+
+95
+00:04:33.293 --> 00:04:35.240
+events really quickly.
+
+96
+00:04:35.240 --> 00:04:37.530
+We can peak ahead real quick.
+
+97
+00:04:37.530 --> 00:04:40.630
+We can say that pic.addEventListener
+
+98
+00:04:41.840 --> 00:04:44.160
+and then we're going to listen for a click.
+
+99
+00:04:44.160 --> 00:04:45.280
+And when that happens,
+
+100
+00:04:45.280 --> 00:04:46.973
+we can run a function.
+
+101
+00:04:47.930 --> 00:04:49.740
+Actually, maybe we'll make a function down here
+
+102
+00:04:49.740 --> 00:04:51.290
+called toggleRound
+
+103
+00:04:55.290 --> 00:05:00.130
+and all that will do is it will toggle class of round
+
+104
+00:05:00.130 --> 00:05:02.520
+and then here we can pass a reference to that function.
+
+105
+00:05:02.520 --> 00:05:05.910
+Again, we haven't learned this yet but stay with me.
+
+106
+00:05:05.910 --> 00:05:07.940
+I think we can understand what's going on here.
+
+107
+00:05:07.940 --> 00:05:09.947
+We make a function called toggleRound
+
+108
+00:05:09.947 --> 00:05:12.400
+that will toggle the classList here
+
+109
+00:05:12.400 --> 00:05:15.640
+and then we will just, every time we click it,
+
+110
+00:05:15.640 --> 00:05:17.050
+we'll run that function.
+
+111
+00:05:17.050 --> 00:05:20.460
+So (imitates object sliding up and down)
+
+112
+00:05:20.460 --> 00:05:22.190
+you have to make the sounds yourself.
+
+113
+00:05:22.190 --> 00:05:23.840
+And it's pretty cool because now we can
+
+114
+00:05:23.840 --> 00:05:25.360
+just go on this round and say things
+
+115
+00:05:25.360 --> 00:05:28.247
+like transform: rotate(20deg).
+
+116
+00:05:36.143 --> 00:05:36.976
+Woo!
+
+117
+00:05:36.976 --> 00:05:38.893
+And then you can go bananas with it.
+
+118
+00:05:40.720 --> 00:05:42.010
+Woo!
+
+119
+00:05:42.010 --> 00:05:45.823
+Here, maybe two, let's do 360.
+
+120
+00:05:48.510 --> 00:05:50.650
+Oh, you can actually, no, you can use turn.
+
+121
+00:05:50.650 --> 00:05:51.483
+1turn.
+
+122
+00:05:55.380 --> 00:05:56.510
+Oh!
+
+123
+00:05:56.510 --> 00:05:58.583
+And we can scale it, 2.
+
+124
+00:06:02.400 --> 00:06:05.023
+And maybe add a box-shadow:
+
+125
+00:06:06.280 --> 00:06:09.503
+0 0 10px black.
+
+126
+00:06:13.000 --> 00:06:13.960
+You get the point, right?
+
+127
+00:06:13.960 --> 00:06:18.960
+It's pretty cool that a lot of JavaScript interaction
+
+128
+00:06:19.660 --> 00:06:23.110
+is simply just going to be adding and removing classes
+
+129
+00:06:23.110 --> 00:06:24.870
+at different points in time.
+
+130
+00:06:24.870 --> 00:06:29.120
+And that will allow us to then step in with CSS
+
+131
+00:06:29.120 --> 00:06:32.190
+and add and remove all these different transitions
+
+132
+00:06:32.190 --> 00:06:33.023
+that we have.
+
+133
+00:06:33.023 --> 00:06:37.340
+So that's pretty common with things like modals or navs
+
+134
+00:06:37.340 --> 00:06:39.700
+that need to open and close or slide in from the side
+
+135
+00:06:39.700 --> 00:06:42.100
+and we'll be doing quite a bit of that in this class.
+
+136
+00:06:42.100 --> 00:06:44.940
+But just know that we've got this classList here
+
+137
+00:06:44.940 --> 00:06:47.940
+and we've got add, remove, toggle,
+
+138
+00:06:47.940 --> 00:06:51.890
+and then also has contains which I don't use all that often
+
+139
+00:06:51.890 --> 00:06:52.723
+but we could.
+
+140
+00:06:52.723 --> 00:06:56.200
+So we just say the pic.classList.contains
+
+141
+00:06:57.480 --> 00:06:59.210
+is it currently open?
+
+142
+00:06:59.210 --> 00:07:00.410
+True.
+
+143
+00:07:00.410 --> 00:07:01.243
+Click it.
+
+144
+00:07:03.070 --> 00:07:03.903
+True.
+
+145
+00:07:03.903 --> 00:07:04.736
+Oh no, is it round?
+
+146
+00:07:04.736 --> 00:07:06.440
+That's what we're looking for, round.
+
+147
+00:07:06.440 --> 00:07:07.273
+True.
+
+148
+00:07:07.273 --> 00:07:08.113
+Click it again.
+
+149
+00:07:09.160 --> 00:07:10.570
+And it should return false to us.
+
+150
+00:07:10.570 --> 00:07:13.260
+So that will be helpful in situations
+
+151
+00:07:13.260 --> 00:07:15.470
+if you need to know if something is currently open
+
+152
+00:07:15.470 --> 00:07:18.020
+or if there's a specific state that you're saving
+
+153
+00:07:18.020 --> 00:07:19.300
+in the classList.
+
+154
+00:07:19.300 --> 00:07:22.420
+So that is adding and removing classes.
+
+155
+00:07:22.420 --> 00:07:23.730
+In the next video, we're going to go
+
+156
+00:07:23.730 --> 00:07:25.470
+into just regular attributes.
+
+157
+00:07:25.470 --> 00:07:30.260
+So even though classes is an attribute.
+
+158
+00:07:30.260 --> 00:07:32.057
+So we can say pic.className,
+
+159
+00:07:35.920 --> 00:07:37.740
+that will actually just give us
+
+160
+00:07:37.740 --> 00:07:39.330
+a list of the class.
+
+161
+00:07:39.330 --> 00:07:42.040
+That's just a property on the element called className.
+
+162
+00:07:42.040 --> 00:07:46.530
+However, classList gives us some sort of utility functions
+
+163
+00:07:46.530 --> 00:07:49.260
+or utility methods for working with it.
+
+164
+00:07:49.260 --> 00:07:52.200
+So any time that you wanna work with classes,
+
+165
+00:07:52.200 --> 00:07:53.810
+I always reach for classList.
+
+166
+00:07:53.810 --> 00:07:57.120
+It's somewhat new, a couple years old in the browser.
+
+167
+00:07:57.120 --> 00:07:59.310
+That's just why that one is existing there.
+
+168
+00:07:59.310 --> 00:08:01.560
+So with that, I will see you in the next one.
+

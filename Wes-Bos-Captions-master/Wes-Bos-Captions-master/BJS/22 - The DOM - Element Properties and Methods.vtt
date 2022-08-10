@@ -1,0 +1,1106 @@
+﻿WEBVTT
+
+1
+00:00:01.400 --> 00:00:03.983
+(upbeat music)
+
+2
+00:00:06.319 --> 00:00:09.620
+<v ->All right let's talk about once you have element,</v>
+
+3
+00:00:09.620 --> 00:00:12.210
+what can you go ahead and do with it?
+
+4
+00:00:12.210 --> 00:00:15.610
+So let's take this H2 tag here.
+
+5
+00:00:15.610 --> 00:00:18.460
+We can take that ID off, we don't need that.
+
+6
+00:00:18.460 --> 00:00:20.190
+And let's go ahead and select that H2,
+
+7
+00:00:20.190 --> 00:00:25.190
+so const heading is equal to document dot query selector.
+
+8
+00:00:25.430 --> 00:00:28.840
+We'll just grab the first h2 that's on the page.
+
+9
+00:00:28.840 --> 00:00:31.683
+And let's go ahead and just console.log the heading.
+
+10
+00:00:32.860 --> 00:00:35.470
+Now you see that we've got this right here.
+
+11
+00:00:35.470 --> 00:00:38.660
+It just may seem like it's just the actual element
+
+12
+00:00:38.660 --> 00:00:41.980
+but in reality it's actually an object
+
+13
+00:00:41.980 --> 00:00:45.150
+that has a lot of properties and methods inside of it.
+
+14
+00:00:45.150 --> 00:00:49.070
+So if we change this console.log to a console dot dir
+
+15
+00:00:49.070 --> 00:00:51.720
+what they will do is it will show us the
+
+16
+00:00:51.720 --> 00:00:54.670
+object properties instead of the actual element itself.
+
+17
+00:00:54.670 --> 00:00:57.930
+So you see there, if we open it up now,
+
+18
+00:00:57.930 --> 00:01:00.820
+it's still the same h2 tag we have,
+
+19
+00:01:00.820 --> 00:01:04.860
+but you'll see, woohoo look at all this stuff.
+
+20
+00:01:04.860 --> 00:01:06.870
+There's so much stuff in here,
+
+21
+00:01:06.870 --> 00:01:09.140
+almost all of it you'll never need to use.
+
+22
+00:01:09.140 --> 00:01:11.410
+It's just there's a lotta legacy stuff,
+
+23
+00:01:11.410 --> 00:01:12.770
+a lotta edgecacy stuff,
+
+24
+00:01:12.770 --> 00:01:16.050
+but there are a bunch of properties on here
+
+25
+00:01:16.050 --> 00:01:19.340
+that will be helpful for actually working with the element.
+
+26
+00:01:19.340 --> 00:01:21.970
+So, like look at this, parent element.
+
+27
+00:01:21.970 --> 00:01:23.730
+It tells you what the parent is.
+
+28
+00:01:23.730 --> 00:01:25.230
+Parent node, we'll talk about the difference
+
+29
+00:01:25.230 --> 00:01:27.300
+between an element and a node in just a bit.
+
+30
+00:01:27.300 --> 00:01:30.210
+Outer HTML, outer text.
+
+31
+00:01:30.210 --> 00:01:33.330
+There's text content, there's also inner text.
+
+32
+00:01:33.330 --> 00:01:37.190
+So, scroll height, scroll width,
+
+33
+00:01:37.190 --> 00:01:39.750
+you see all kinds of cool stuff is on here.
+
+34
+00:01:39.750 --> 00:01:43.730
+So these are just properties meaning that
+
+35
+00:01:43.730 --> 00:01:45.600
+we can either use them as getters,
+
+36
+00:01:45.600 --> 00:01:48.510
+meaning we just pull the data out of it that we need,
+
+37
+00:01:48.510 --> 00:01:52.280
+or as setters, so let's go ahead and use dot text content.
+
+38
+00:01:52.280 --> 00:01:55.173
+So console.log heading dot text content.
+
+39
+00:01:57.360 --> 00:02:00.050
+That is going to show, "I am a heading".
+
+40
+00:02:00.050 --> 00:02:03.980
+Now that is a getter,
+
+41
+00:02:03.980 --> 00:02:06.520
+but you can also use them as setters.
+
+42
+00:02:06.520 --> 00:02:09.360
+And setters is when you just update the property.
+
+43
+00:02:09.360 --> 00:02:12.117
+So if say heading dot text content equals,
+
+44
+00:02:12.117 --> 00:02:13.577
+"wes is cool",
+
+45
+00:02:14.580 --> 00:02:15.960
+give it a save.
+
+46
+00:02:15.960 --> 00:02:17.960
+Now you see that when we load the page,
+
+47
+00:02:17.960 --> 00:02:20.320
+we'll see, "wes is cool" instead of
+
+48
+00:02:20.320 --> 00:02:21.810
+whatever it used to be there.
+
+49
+00:02:21.810 --> 00:02:24.950
+You can actually console.log the...
+
+50
+00:02:24.950 --> 00:02:26.320
+I'm using dir here still.
+
+51
+00:02:26.320 --> 00:02:29.710
+You can log the text content before and after.
+
+52
+00:02:29.710 --> 00:02:32.267
+See, "I am a heading" is what it was and now it's
+
+53
+00:02:32.267 --> 00:02:37.267
+"wes is cool" because we set the text content property
+
+54
+00:02:37.920 --> 00:02:39.900
+on that element.
+
+55
+00:02:39.900 --> 00:02:40.733
+What else do we have?
+
+56
+00:02:40.733 --> 00:02:42.130
+We also have inner text.
+
+57
+00:02:42.130 --> 00:02:44.250
+So if I change that text content out,
+
+58
+00:02:44.250 --> 00:02:47.773
+or maybe I'll duplicate it and then use inner text.
+
+59
+00:02:49.345 --> 00:02:50.720
+You might say, what's the difference between
+
+60
+00:02:50.720 --> 00:02:53.140
+text content and inner text.
+
+61
+00:02:53.140 --> 00:02:54.270
+It's exactly the same thing.
+
+62
+00:02:54.270 --> 00:02:56.250
+I honestly didn't know the difference.
+
+63
+00:02:56.250 --> 00:02:59.325
+I had just been using, text content is the newer one
+
+64
+00:02:59.325 --> 00:03:03.110
+out of the two, but there are always those two,
+
+65
+00:03:03.110 --> 00:03:06.500
+so I actually went on the MDN docs and said,
+
+66
+00:03:06.500 --> 00:03:08.634
+what is the difference between the two and it says,
+
+67
+00:03:08.634 --> 00:03:11.560
+text content gets all of the elements including
+
+68
+00:03:11.560 --> 00:03:13.560
+script and style elements.
+
+69
+00:03:13.560 --> 00:03:16.590
+In contrast, inner text only shows human readable elements.
+
+70
+00:03:16.590 --> 00:03:19.763
+So if for some reason, and this is not,
+
+71
+00:03:20.840 --> 00:03:23.810
+especially in React-land, this can actually happen.
+
+72
+00:03:23.810 --> 00:03:27.110
+If for some reason you have a style tag in there
+
+73
+00:03:27.110 --> 00:03:31.240
+and maybe you say, h2 color
+
+74
+00:03:32.270 --> 00:03:33.103
+red.
+
+75
+00:03:40.708 --> 00:03:43.910
+And we were to refresh that, you see it says,
+
+76
+00:03:43.910 --> 00:03:45.730
+I am a heading.
+
+77
+00:03:45.730 --> 00:03:48.560
+Wait, we need to log this before we actually change it.
+
+78
+00:03:48.560 --> 00:03:53.203
+So if we log the text content and then the inner text,
+
+79
+00:03:56.650 --> 00:03:59.840
+you'll see that inner text will give us just the
+
+80
+00:03:59.840 --> 00:04:02.950
+I am a heading or as text content will give you
+
+81
+00:04:02.950 --> 00:04:06.020
+the contents of, sort of, I'm using quotes here.
+
+82
+00:04:06.020 --> 00:04:09.380
+Imagine me putting my fingers in the air, hidden ones,
+
+83
+00:04:09.380 --> 00:04:11.250
+so that's the first big one.
+
+84
+00:04:11.250 --> 00:04:14.040
+Second one is, content returns every element in the node.
+
+85
+00:04:14.040 --> 00:04:17.242
+In contrast, inner text is aware of styling
+
+86
+00:04:17.242 --> 00:04:21.180
+and won't return text of hidden elements.
+
+87
+00:04:21.180 --> 00:04:22.950
+That's actually kinda cool.
+
+88
+00:04:22.950 --> 00:04:25.033
+Because if you take a look here.
+
+89
+00:04:25.960 --> 00:04:28.220
+Let's get rid of all this altogether.
+
+90
+00:04:28.220 --> 00:04:31.017
+I am a heading, and then maybe we put like a span in here,
+
+91
+00:04:31.017 --> 00:04:33.017
+that's I am hidden.
+
+92
+00:04:34.310 --> 00:04:37.180
+And then we maybe make a style tag down here,
+
+93
+00:04:37.180 --> 00:04:40.750
+and we'll say any time we have a h2,
+
+94
+00:04:40.750 --> 00:04:43.803
+that has a span inside of it, will display none it.
+
+95
+00:04:45.840 --> 00:04:47.190
+So let's see, is it there?
+
+96
+00:04:47.190 --> 00:04:48.023
+Oh there was this...
+
+97
+00:04:48.023 --> 00:04:50.343
+We gotta take this thing off.
+
+98
+00:04:53.830 --> 00:04:56.800
+So, I am a heading, here's the hidden element,
+
+99
+00:04:56.800 --> 00:04:58.490
+you can't see it.
+
+100
+00:04:58.490 --> 00:05:01.240
+Now if we go to our console here,
+
+101
+00:05:01.240 --> 00:05:06.240
+you see that the text content gives us the hidden text
+
+102
+00:05:06.750 --> 00:05:08.980
+as well as white space it looks like,
+
+103
+00:05:08.980 --> 00:05:12.380
+and inner text will just trim it up and not show us.
+
+104
+00:05:12.380 --> 00:05:16.080
+So inner text is aware of CSS styling.
+
+105
+00:05:16.080 --> 00:05:19.710
+That's something I didn't know until six months ago
+
+106
+00:05:19.710 --> 00:05:21.750
+when I was just curious about it and googled it.
+
+107
+00:05:21.750 --> 00:05:23.680
+But that's certainly something that could come
+
+108
+00:05:23.680 --> 00:05:27.040
+and bite ya if you do have it.
+
+109
+00:05:27.040 --> 00:05:29.410
+Unlike text content, altering inner text
+
+110
+00:05:29.410 --> 00:05:31.930
+in Internet Explorer 11 removes child nodes,
+
+111
+00:05:31.930 --> 00:05:34.290
+permanently destroys all descendants of the node.
+
+112
+00:05:34.290 --> 00:05:37.253
+So, that's not that important so, good to know.
+
+113
+00:05:40.140 --> 00:05:44.040
+We also have a set of properties for working with html.
+
+114
+00:05:44.040 --> 00:05:47.400
+So let's actually leave this span inside of here
+
+115
+00:05:47.400 --> 00:05:51.470
+that says I am hidden and if we were to console.log
+
+116
+00:05:51.470 --> 00:05:53.763
+the inner html,
+
+117
+00:05:55.940 --> 00:05:56.773
+what do you get?
+
+118
+00:05:56.773 --> 00:05:59.570
+You get the actual, the html that fills it up.
+
+119
+00:05:59.570 --> 00:06:03.480
+We also have the outer html, and that should give us
+
+120
+00:06:03.480 --> 00:06:07.370
+the including h2 tag as well as the
+
+121
+00:06:09.580 --> 00:06:12.173
+white space that goes inside of it.
+
+122
+00:06:13.770 --> 00:06:17.420
+Another thing here is that if you ever want to
+
+123
+00:06:17.420 --> 00:06:20.610
+tack text on to something,
+
+124
+00:06:20.610 --> 00:06:23.330
+so let's do a totally separate example here.
+
+125
+00:06:23.330 --> 00:06:27.763
+Let's go into one of our items here, and say
+
+126
+00:06:30.230 --> 00:06:32.190
+this is
+
+127
+00:06:32.190 --> 00:06:34.020
+how many pizzas
+
+128
+00:06:34.020 --> 00:06:35.950
+I ate.
+
+129
+00:06:35.950 --> 00:06:38.940
+And then we'll just start with one pizza emoji.
+
+130
+00:06:38.940 --> 00:06:40.900
+All right and we're gonna build something
+
+131
+00:06:40.900 --> 00:06:45.230
+that adds a pizza emoji to the end of it.
+
+132
+00:06:45.230 --> 00:06:49.000
+So one way that you could do that is you could
+
+133
+00:06:49.000 --> 00:06:50.300
+first go ahead and select it.
+
+134
+00:06:50.300 --> 00:06:51.320
+So const
+
+135
+00:06:52.920 --> 00:06:54.600
+pizza list
+
+136
+00:06:54.600 --> 00:06:55.433
+is equal to,
+
+137
+00:06:55.433 --> 00:06:58.323
+what did we do, let's give it a class of pizza.
+
+138
+00:07:06.030 --> 00:07:09.280
+Document dot query selector dot pizza
+
+139
+00:07:10.170 --> 00:07:14.870
+and console.log the pizza list dot
+
+140
+00:07:14.870 --> 00:07:16.113
+text content.
+
+141
+00:07:18.323 --> 00:07:19.930
+Here we go.
+
+142
+00:07:19.930 --> 00:07:24.520
+Now if we wanna update that, we could do
+
+143
+00:07:24.520 --> 00:07:27.120
+something like this, pizza list dot text content
+
+144
+00:07:27.120 --> 00:07:30.760
+is equal to pizza list dot text content plus
+
+145
+00:07:30.760 --> 00:07:34.230
+and we put a pizza on the end and I think my ESlint
+
+146
+00:07:34.230 --> 00:07:36.550
+will turn that into back ticks.
+
+147
+00:07:36.550 --> 00:07:40.350
+Whoa, oh yeah, it turned it into a plus equals.
+
+148
+00:07:40.350 --> 00:07:41.960
+No that's not what we want.
+
+149
+00:07:41.960 --> 00:07:44.940
+We want back tick, not...
+
+150
+00:07:51.350 --> 00:07:52.810
+So take what was already there
+
+151
+00:07:52.810 --> 00:07:54.790
+and add another pizza emoji to the end.
+
+152
+00:07:54.790 --> 00:07:57.210
+And now when we refresh it, there is two.
+
+153
+00:07:57.210 --> 00:08:01.330
+So that's kind of the way I had done it for a long time.
+
+154
+00:08:01.330 --> 00:08:05.500
+But that actually was slow in some applications
+
+155
+00:08:05.500 --> 00:08:09.850
+where I had lots of text and even some html,
+
+156
+00:08:09.850 --> 00:08:12.430
+we'll learn about that, how to put back in it.
+
+157
+00:08:12.430 --> 00:08:15.220
+And what that does is it causes the browser to re-render
+
+158
+00:08:15.220 --> 00:08:17.000
+the entire list.
+
+159
+00:08:17.000 --> 00:08:20.800
+So what you can do is you can tack text on to the end
+
+160
+00:08:20.800 --> 00:08:24.810
+with another method called insert adjacent element,
+
+161
+00:08:24.810 --> 00:08:28.530
+or insert adjacent text and what that will do is
+
+162
+00:08:28.530 --> 00:08:31.690
+it will give us the ability to add stuff on to the front
+
+163
+00:08:31.690 --> 00:08:33.060
+or to the back of it.
+
+164
+00:08:33.060 --> 00:08:36.640
+So let's change that and we'll just say,
+
+165
+00:08:36.640 --> 00:08:41.640
+pizza list dot insert adjacent, see there's three of them,
+
+166
+00:08:41.950 --> 00:08:46.590
+element, html, and text, and we can go to
+
+167
+00:08:46.590 --> 00:08:48.233
+MDN and take a quick look.
+
+168
+00:08:52.890 --> 00:08:57.090
+And you see that this is not a property but it is a method
+
+169
+00:08:57.090 --> 00:08:58.150
+meaning that it's a function
+
+170
+00:08:58.150 --> 00:09:00.760
+that we run against the element,
+
+171
+00:09:00.760 --> 00:09:03.030
+much like query selector and query selector all.
+
+172
+00:09:03.030 --> 00:09:04.350
+It takes two arguments.
+
+173
+00:09:04.350 --> 00:09:05.950
+First the position,
+
+174
+00:09:05.950 --> 00:09:09.570
+before begin, after begin, before end and after end.
+
+175
+00:09:09.570 --> 00:09:14.200
+And then you also want to give it the
+
+176
+00:09:14.200 --> 00:09:15.710
+text that you wanna pass it.
+
+177
+00:09:15.710 --> 00:09:20.710
+It says element here, but it just means raw text.
+
+178
+00:09:20.900 --> 00:09:23.440
+This is not adding html.
+
+179
+00:09:23.440 --> 00:09:25.200
+So we can do that, we wanna say
+
+180
+00:09:29.730 --> 00:09:33.833
+before end and we wanna add a pizza emoji.
+
+181
+00:09:36.130 --> 00:09:37.010
+And there we go.
+
+182
+00:09:37.010 --> 00:09:39.090
+It gives us the same thing but you know
+
+183
+00:09:39.090 --> 00:09:43.910
+that's the best way to attach text to the end of something.
+
+184
+00:09:43.910 --> 00:09:48.133
+And we can also swap it out, we can say before begin.
+
+185
+00:09:49.010 --> 00:09:50.040
+What will that do?
+
+186
+00:09:50.040 --> 00:09:54.930
+You see what that does actually is it puts the pizza emoji
+
+187
+00:09:54.930 --> 00:09:58.720
+before the paragraph entirely just out on it's own.
+
+188
+00:09:58.720 --> 00:10:01.670
+So it's not inside of an element anywhere,
+
+189
+00:10:01.670 --> 00:10:03.750
+well it's part of the article, but it's before it.
+
+190
+00:10:03.750 --> 00:10:08.280
+So we would actually want after begin
+
+191
+00:10:08.280 --> 00:10:11.470
+if we want to put the pizza inside.
+
+192
+00:10:11.470 --> 00:10:14.410
+So now that should give us, there we go, oo hoo.
+
+193
+00:10:14.410 --> 00:10:16.410
+That puts the pizza in front of it.
+
+194
+00:10:16.410 --> 00:10:18.440
+And you see actually the browser knows
+
+195
+00:10:18.440 --> 00:10:20.810
+that you added that after the fact
+
+196
+00:10:20.810 --> 00:10:25.320
+because it split up the text into what we used to have
+
+197
+00:10:25.320 --> 00:10:26.680
+and what we have added.
+
+198
+00:10:26.680 --> 00:10:28.850
+And that's actually the difference between
+
+199
+00:10:28.850 --> 00:10:30.420
+elements and nodes.
+
+200
+00:10:30.420 --> 00:10:34.150
+So nodes can be anything, like it could...
+
+201
+00:10:34.150 --> 00:10:36.800
+This is also a node, this is a node, this is a node.
+
+202
+00:10:36.800 --> 00:10:39.330
+But an actual element is actually just a,
+
+203
+00:10:39.330 --> 00:10:43.060
+something is wrapped in a tag, so that's an element,
+
+204
+00:10:43.060 --> 00:10:44.867
+that's an element, that's an element.
+
+205
+00:10:44.867 --> 00:10:47.190
+These are just nodes.
+
+206
+00:10:47.190 --> 00:10:50.000
+It's a little bit confusing because everything is a node.
+
+207
+00:10:50.000 --> 00:10:54.200
+And then it only upgrades itself to an element
+
+208
+00:10:54.200 --> 00:10:57.210
+if you have wrapped it in a tag.
+
+209
+00:10:57.210 --> 00:10:58.630
+In this case, these are just nodes.
+
+210
+00:10:58.630 --> 00:11:00.970
+So, I don't know, let's run it again.
+
+211
+00:11:00.970 --> 00:11:02.103
+After begin.
+
+212
+00:11:06.560 --> 00:11:10.363
+And after, or before end.
+
+213
+00:11:11.780 --> 00:11:12.823
+Before end.
+
+214
+00:11:14.840 --> 00:11:15.673
+There we go.
+
+215
+00:11:15.673 --> 00:11:18.080
+So that's our after begin and before end.
+
+216
+00:11:18.080 --> 00:11:20.423
+That's the best way to tack text on to it.
+
+217
+00:11:22.200 --> 00:11:24.860
+If you're wondering what all of the possible ones are,
+
+218
+00:11:24.860 --> 00:11:26.900
+I'm not gonna sit here and show you absolutely
+
+219
+00:11:26.900 --> 00:11:27.840
+every single one.
+
+220
+00:11:27.840 --> 00:11:30.150
+We're just gonna stumble upon these different
+
+221
+00:11:30.150 --> 00:11:31.960
+properties and methods as we need them
+
+222
+00:11:31.960 --> 00:11:34.602
+as we start to build a lot of our exercises.
+
+223
+00:11:34.602 --> 00:11:37.520
+You can go to the MDN Docs and this is
+
+224
+00:11:37.520 --> 00:11:40.650
+I think super helpful to be able to actually understand
+
+225
+00:11:40.650 --> 00:11:44.170
+what the possible things are available to us.
+
+226
+00:11:44.170 --> 00:11:48.810
+So you go to Element, which is...
+
+227
+00:11:48.810 --> 00:11:51.130
+an element is just like a tag on the page.
+
+228
+00:11:51.130 --> 00:11:52.470
+Here's a little example.
+
+229
+00:11:52.470 --> 00:11:53.980
+Remember I said everything is a node.
+
+230
+00:11:53.980 --> 00:11:55.200
+This is an element.
+
+231
+00:11:55.200 --> 00:11:58.830
+And then it tells us what all the properties are
+
+232
+00:11:58.830 --> 00:12:00.370
+inside of that element.
+
+233
+00:12:00.370 --> 00:12:02.310
+So all kinds of stuff.
+
+234
+00:12:02.310 --> 00:12:04.820
+The ones with exclamation marks beside it
+
+235
+00:12:04.820 --> 00:12:07.210
+are things you kinda want to stay away from.
+
+236
+00:12:07.210 --> 00:12:09.960
+And then you can, where did text content go?
+
+237
+00:12:09.960 --> 00:12:10.903
+Let's look for it.
+
+238
+00:12:13.020 --> 00:12:15.630
+Oh you see, you know what, text content is not here.
+
+239
+00:12:15.630 --> 00:12:19.460
+And that's because some of the properties
+
+240
+00:12:19.460 --> 00:12:20.930
+don't just exist on element.
+
+241
+00:12:20.930 --> 00:12:23.130
+But they also exist on node.
+
+242
+00:12:23.130 --> 00:12:25.360
+So you can click through to node
+
+243
+00:12:25.360 --> 00:12:26.710
+and look for a text content.
+
+244
+00:12:26.710 --> 00:12:27.863
+There we go.
+
+245
+00:12:28.828 --> 00:12:32.240
+It tells us, returns or sets the textual content
+
+246
+00:12:32.240 --> 00:12:34.750
+of an element and all of its descendants.
+
+247
+00:12:34.750 --> 00:12:36.040
+So we'll go back here.
+
+248
+00:12:36.040 --> 00:12:38.220
+If you wanna know, those are the properties
+
+249
+00:12:38.220 --> 00:12:41.930
+and then there's also a huge list of the different
+
+250
+00:12:41.930 --> 00:12:44.350
+methods and you'll see
+
+251
+00:12:45.340 --> 00:12:47.500
+that there's probably...
+
+252
+00:12:48.770 --> 00:12:50.440
+There we go, insert adjacent text.
+
+253
+00:12:50.440 --> 00:12:52.560
+That's the one that we just had.
+
+254
+00:12:52.560 --> 00:12:54.040
+But there's also query selector,
+
+255
+00:12:54.040 --> 00:12:56.230
+we learned about those methods.
+
+256
+00:12:56.230 --> 00:12:58.300
+There's matches, which I'm sure we'll use that
+
+257
+00:12:58.300 --> 00:12:59.700
+in this course at some point.
+
+258
+00:12:59.700 --> 00:13:01.370
+All kinds of different methods in here.
+
+259
+00:13:01.370 --> 00:13:04.090
+The ones with the little beakers beside it
+
+260
+00:13:04.090 --> 00:13:08.100
+are ones that are still in development.
+
+261
+00:13:08.100 --> 00:13:10.600
+Hopefully all of these are super handy
+
+262
+00:13:10.600 --> 00:13:12.470
+and I bet in the next little while,
+
+263
+00:13:12.470 --> 00:13:14.650
+you might even be watching this
+
+264
+00:13:14.650 --> 00:13:15.980
+six months after I release it
+
+265
+00:13:15.980 --> 00:13:18.070
+and these will be unbeakered
+
+266
+00:13:18.070 --> 00:13:21.290
+because they are super handy and be able to use them.
+
+267
+00:13:21.290 --> 00:13:22.680
+So, that is elements.
+
+268
+00:13:22.680 --> 00:13:27.680
+That is being able to both get properties from the element,
+
+269
+00:13:27.830 --> 00:13:30.870
+set properties on the element and then also use
+
+270
+00:13:30.870 --> 00:13:34.780
+a little bit more powerful methods
+
+271
+00:13:34.780 --> 00:13:37.410
+on each of our elements or on each of our nodes,
+
+272
+00:13:37.410 --> 00:13:39.850
+like insert adjacent text.
+
+273
+00:13:39.850 --> 00:13:40.940
+That's a high level.
+
+274
+00:13:40.940 --> 00:13:45.090
+We're gonna be using that a whole bunch in our exercises.
+
+275
+00:13:45.090 --> 00:13:49.960
+For now, let's swoop into working with classes
+
+276
+00:13:49.960 --> 00:13:52.363
+and other attributes on the element.
+
